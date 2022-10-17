@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "person")
+@Table(name = "persons")
 public class Person {
 
     @Id
@@ -12,7 +12,10 @@ public class Person {
     private long id;
 
     @Column(nullable = false)
-    private String name;
+    private String firstName;
+
+    @Column(nullable = false)
+    private String lastName;
 
     @Column(nullable = false)
     private long age;
@@ -26,19 +29,28 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, long age, Date dateJoined, Date dateUpdated) {
-        this.name = name;
+    public Person(String firstName, String lastName, long age, Date dateJoined, Date dateUpdated) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.age = age;
         this.dateJoined = dateJoined;
         this.dateUpdated = dateUpdated;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public long getAge() {
