@@ -3,27 +3,13 @@ package models;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "persons")
 public class Person {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @Column(nullable = false)
     private String firstName;
-
-    @Column(nullable = false)
     private String lastName;
-
-    @Column(nullable = false)
     private long age;
-
-    @Column(nullable = false)
     private Date dateJoined;
-
-    @Column(nullable = false)
     private Date dateUpdated;
 
     public Person() {
