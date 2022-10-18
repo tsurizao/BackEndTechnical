@@ -11,25 +11,25 @@ public class CRUDProgram {
             System.out.println("2 - Read a person");
             System.out.println("3 - Update a person");
             System.out.println("4 - Delete a person");
+            System.out.println("0 - Exit Program");
             String userInput = sc.nextLine();
-            switch (userInput) {
-                case "1" ->
-                    // CrudCreate;
-                        System.out.println("You chose CREATE");
-                case "2" ->
-                    // CrudRead
-                        System.out.println("You chose READ");
-                case "3" ->
-                    // CrudUpdate
-                        System.out.println("You chose UPDATE");
-                case "4" ->
-                    // CrudDelete
-                        System.out.println("You chose DELETE");
-                case "0" -> {
-                    System.out.println("You chose to exit, have a nice day!");
-                    programStatus = false;
+            if (userInput.equals("1")) {
+                boolean optionStatus = true;
+                System.out.println("CREATE");
+                while (optionStatus) {
+                    CrudCreate create = new CrudCreate();
+                    create.Create();
+                    optionStatus = false;
                 }
-                default -> System.out.println("Please choose an option from the menu.");
+            } else if (userInput.equals("2")) {
+                System.out.println("READ");
+            } else if (userInput.equals("3")) {
+                System.out.println("UPDATE");
+            } else if (userInput.equals("4")) {
+                System.out.println("DELETE");
+            } else if (userInput.equals("0")) {
+                programStatus = false;
+                System.out.println("Have a nice day!");
             }
         }
     }
