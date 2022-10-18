@@ -1,8 +1,9 @@
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class CRUDProgram {
-    public static void Run() throws SQLException {
+    public static void Run() throws SQLException, ParseException {
         Scanner sc = new Scanner(System.in);
         boolean programStatus = true;
         while (programStatus) {

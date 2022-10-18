@@ -6,13 +6,14 @@ public class Person {
     private String firstName;
     private String lastName;
     private long age;
-    private Date dateJoined;
-    private Date dateUpdated;
+    private String dateJoined;
+    private String dateUpdated;
 
     public Person() {
     }
 
-    public Person(String firstName, String lastName, long age, Date dateJoined, Date dateUpdated) {
+    public Person(long id, String firstName, String lastName, long age, String dateJoined, String dateUpdated) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -44,19 +45,19 @@ public class Person {
         this.age = age;
     }
 
-    public Date getDateJoined() {
+    public String getDateJoined() {
         return dateJoined;
     }
 
-    public void setDateJoined(Date dateJoined) {
+    public void setDateJoined(String dateJoined) {
         this.dateJoined = dateJoined;
     }
 
-    public Date getDateUpdated() {
+    public String getDateUpdated() {
         return dateUpdated;
     }
 
-    public void setDateUpdated(Date dateUpdated) {
+    public void setDateUpdated(String dateUpdated) {
         this.dateUpdated = dateUpdated;
     }
 
