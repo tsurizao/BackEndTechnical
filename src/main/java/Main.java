@@ -1,5 +1,8 @@
+import java.sql.SQLException;
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
-        Person person = new Person();
+    public static void main(String[] args) throws SQLException {
+        CRUDProgram.Run();
     }
 }
