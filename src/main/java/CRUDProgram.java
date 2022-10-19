@@ -11,12 +11,15 @@ public class CRUDProgram {
         while (programStatus) {
 
             // Printing main menu
-            System.out.println("What would you like to do?  Please choose the appropriate number for the selection");
-            System.out.println("1 - Create a person");
-            System.out.println("2 - Read a person");
-            System.out.println("3 - Update a person");
-            System.out.println("4 - Delete a person");
-            System.out.println("0 - Exit Program");
+            System.out.println("""
+                    What would you like to do?  Choose a number option:
+                    1 - Create a person
+                    2 - Read a person
+                    3 - Update a person
+                    4 - Delete a person
+                    0 - Exit Program"""
+            );
+
             String userInput = sc.nextLine();
 
             // Used Switch instead of if/else statements
@@ -29,6 +32,9 @@ public class CRUDProgram {
                 }
                 case "2" -> {
                     System.out.println("READ");
+                    // CrudRead is a standalone class that handles the R part of CRUD
+                    CrudRead read = new CrudRead();
+                    read.Read();
                 }
                 case "3" -> {
                     System.out.println("UPDATE");
