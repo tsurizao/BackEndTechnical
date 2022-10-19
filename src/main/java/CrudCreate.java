@@ -24,7 +24,7 @@ public class CrudCreate {
         Scanner sc = new Scanner(System.in);
         Person person = new Person();
 
-        // Ensures all fields have information in them before attemping to insert into table
+        // Ensures that all fields have information in them before attempting to insert into table
         while (person.getFirstName() == null && person.getLastName() == null && person.getAge() == 0 && person.getDateJoined() == null && person.getDateUpdated() == null) {
             while (person.getFirstName() == null || person.getFirstName().trim().equals("")) {
                 System.out.println("Please enter the person's FIRST NAME: ");
