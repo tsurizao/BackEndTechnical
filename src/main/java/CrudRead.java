@@ -16,54 +16,61 @@ public class CrudRead {
     public void Read() throws SQLException {
         Scanner sc = new Scanner(System.in);
         Statement statement = connection.createStatement();
-        System.out.println("""
-                How would you like to search for a person? Choose a number option:
-                1 - by FIRST NAME
-                2 - by LAST NAME
-                3 - by AGE
-                4 - by DATE JOINED
-                5 - by DATE of information UPDATED
-                0 - Previous Menu"""
-        );
-        String userInput = sc.nextLine();
-        // by first name
-        switch (userInput) {
-            case "1": {
-                System.out.println("Enter the FIRST NAME of the person: ");
-                userInput = sc.nextLine();
-                ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE first_name = '" + userInput + "'");
-                readResultSet(rs);
-                break;
-            }
-            case "2": {
-                System.out.println("Enter the LAST NAME of the person: ");
-                userInput = sc.nextLine();
-                ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE last_name = '" + userInput + "'");
-                readResultSet(rs);
-                break;
-            }
-            case "3": {
-                System.out.println("Enter the AGE of the person: ");
-                userInput = sc.nextLine();
-                ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE age = '" + Long.parseLong(userInput) + "'");
-                readResultSet(rs);
-                break;
-            }
-            case "4": {
-                System.out.println("Enter the DATE JOINED of the person: (Format YYYY-MM-DD)");
-                userInput = sc.nextLine();
-                ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE date_joined = '" + userInput + "'");
-                readResultSet(rs);
-                break;
-            }
-            case "5": {
-                break;
-            }
-            case "0": {
-                break;
-            }
-            default: {
-                break;
+        boolean loopState = true;
+        while (loopState) {
+            System.out.println("""
+                    How would you like to search for a person? Choose a number option:
+                    1 - by FIRST NAME
+                    2 - by LAST NAME
+                    3 - by AGE
+                    4 - by DATE JOINED
+                    5 - by DATE of information UPDATED
+                    0 - Previous Menu"""
+            );
+            String userInput = sc.nextLine();
+            // by first name
+            switch (userInput) {
+                case "1": {
+                    System.out.println("Enter the FIRST NAME of the person: ");
+                    userInput = sc.nextLine();
+                    ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE first_name = '" + userInput + "'");
+                    readResultSet(rs);
+                    break;
+                }
+                case "2": {
+                    System.out.println("Enter the LAST NAME of the person: ");
+                    userInput = sc.nextLine();
+                    ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE last_name = '" + userInput + "'");
+                    readResultSet(rs);
+                    break;
+                }
+                case "3": {
+                    System.out.println("Enter the AGE of the person: ");
+                    userInput = sc.nextLine();
+                    ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE age = '" + Long.parseLong(userInput) + "'");
+                    readResultSet(rs);
+                    break;
+                }
+                case "4": {
+                    System.out.println("Enter the DATE JOINED of the person: (Format YYYY-MM-DD)");
+                    userInput = sc.nextLine();
+                    ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE date_joined = '" + userInput + "'");
+                    readResultSet(rs);
+                    break;
+                }
+                case "5": {
+                    System.out.println("Enter the DATE of information UPDATE: (Format YYYY-MM-DD)");
+                    userInput = sc.nextLine();
+                    ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE date_updated = '" + userInput + "'");
+                    readResultSet(rs);
+                    break;
+                }
+                case "0": {
+                    loopState = false;
+                    break;
+                }
+                default: {
+                }
             }
         }
 
@@ -73,7 +80,7 @@ public class CrudRead {
 
     // Used to reduce amount of code when reading result sets
     public void readResultSet(ResultSet rs) throws SQLException {
-        while(rs.next()){
+        while (rs.next()) {
             System.out.println("##########");
             System.out.println("ID: " + rs.getLong("id"));
             System.out.println("Name: " + rs.getString("first_name") + " " + rs.getString("last_name"));
