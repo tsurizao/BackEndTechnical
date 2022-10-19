@@ -8,8 +8,6 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class CrudCreate {
-    // Crud Sub Program
-
     Connection connection = DriverManager.getConnection(
             "jdbc:mysql://localhost:3306/back_end_technical?allowPublicKeyRetrieval=true&useSSL=false",
             "root",
