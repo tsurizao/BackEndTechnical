@@ -37,7 +37,6 @@ public class CrudCreate {
                 System.out.println("Please enter the person's AGE: ");
                 String userInput = sc.nextLine();
                 person.setAge(Long.parseLong(userInput));
-
             }
             while (person.getDateJoined() == null) {
                 System.out.println("Please enter the DATE the person joined (Format as YYYY-MM-DD): ");

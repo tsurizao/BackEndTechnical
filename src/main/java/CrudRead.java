@@ -26,6 +26,7 @@ public class CrudRead {
                     5 - by DATE of information UPDATED
                     0 - Previous Menu"""
             );
+
             String userInput = sc.nextLine();
             switch (userInput) {
                 case "1": {

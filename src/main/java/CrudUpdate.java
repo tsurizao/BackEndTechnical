@@ -22,8 +22,8 @@ public class CrudUpdate {
                 2 - by LAST NAME
                 0 - Previous Menu"""
         );
-        String userInput = sc.nextLine();
 
+        String userInput = sc.nextLine();
         switch (userInput) {
             case "1" -> {
                 System.out.println("Enter the FIRST NAME of the person you want to UPDATE");
@@ -46,6 +46,7 @@ public class CrudUpdate {
             default -> {
             }
         }
+        connection.close();
     }
 
     // Used to reduce amount of code when reading result sets, specifically for CrudUpdate
@@ -77,25 +78,24 @@ public class CrudUpdate {
                 userInput = sc.nextLine();
                 switch (userInput) {
                     case "1" -> {
-                        System.out.println("Enter the new FIRST NAME of person");
+                        System.out.println("Enter the new FIRST NAME of the person");
                         userInput = sc.nextLine();
                         statement.execute("UPDATE persons SET first_name = '" + userInput + "', date_updated = '" + person.getDateUpdated() + "' WHERE id = " + person.getId() + "");
                     }
                     case "2" -> {
-                        System.out.println("Enter the new LAST NAME of person");
+                        System.out.println("Enter the new LAST NAME of the person");
                         userInput = sc.nextLine();
                         statement.execute("UPDATE persons SET last_name = '" + userInput + "', date_updated = '" + person.getDateUpdated() + "' WHERE id = " + person.getId() + "");
                     }
                     case "3" -> {
-                        System.out.println("Enter the new AGE of person");
+                        System.out.println("Enter the new AGE of the person");
                         userInput = sc.nextLine();
                         statement.execute("UPDATE persons SET age = '" + userInput + "', date_updated = '" + person.getDateUpdated() + "' WHERE id = " + person.getId() + "");
                     }
                     case "4" -> {
-                        System.out.println("Enter the new DATE JOINED of person (User format yyyy-mm-dd");
+                        System.out.println("Enter the new DATE JOINED of the person (User format yyyy-mm-dd");
                         userInput = sc.nextLine();
                         statement.execute("UPDATE persons SET date_joined = '" + userInput + "', date_updated = '" + person.getDateUpdated() + "' WHERE id = " + person.getId() + "");
-
                     }
                     default -> {
                     }
@@ -104,5 +104,4 @@ public class CrudUpdate {
             }
         }
     }
-    // Ensure any executed updates also updates the date_updated field
 }
