@@ -41,6 +41,8 @@ public class CRUDProgram {
                 }
                 case "4" -> {
                     System.out.println("DELETE");
+                    CrudDelete delete = new CrudDelete();
+                    delete.Delete();
                 }
                 case "0" -> {
                     programStatus = false;
