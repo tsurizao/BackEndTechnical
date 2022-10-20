@@ -18,7 +18,7 @@ public class CrudRead {
         boolean loopState = true;
         while (loopState) {
             System.out.println("""
-                    How would you like to search for a person? Choose a number option:
+                    How would you like to search for the person? Choose a number option:
                     1 - by FIRST NAME
                     2 - by LAST NAME
                     3 - by AGE
