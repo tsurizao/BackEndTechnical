@@ -26,18 +26,18 @@ public class CRUDProgram {
             switch (userInput) {
                 case "1" -> {
                     System.out.println("CREATE");
-                    // CrudCreate is a standalone class that handles the C part of CRUD
                     CrudCreate create = new CrudCreate();
                     create.Create();
                 }
                 case "2" -> {
                     System.out.println("READ");
-                    // CrudRead is a standalone class that handles the R part of CRUD
                     CrudRead read = new CrudRead();
                     read.Read();
                 }
                 case "3" -> {
                     System.out.println("UPDATE");
+                    CrudUpdate update = new CrudUpdate();
+                    update.Update();
                 }
                 case "4" -> {
                     System.out.println("DELETE");

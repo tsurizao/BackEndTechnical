@@ -53,5 +53,6 @@ public class CrudCreate {
         // Ensures table exists, if it doesn't it will create it
         statement.execute("CREATE TABLE IF NOT EXISTS persons (id INT UNSIGNED NOT NULL AUTO_INCREMENT, first_name VARCHAR(50) NOT NULL, last_name  VARCHAR(100) NOT NULL, age INT NOT NULL, date_joined DATE NOT NULL, date_updated DATE NOT NULL, PRIMARY KEY (id))");
         statement.execute("INSERT INTO persons (first_name, last_name, age, date_joined, date_updated) VALUES ('" + person.getFirstName() + "', '" + person.getLastName() + "', '" + person.getAge() + "', '" + person.getDateJoined() + "', '" + person.getDateUpdated() + "')");
+        connection.close();
     }
 }

@@ -71,6 +71,7 @@ public class CrudRead {
                 }
             }
         }
+        connection.close();
     }
 
     // Used to reduce amount of code when reading result sets
