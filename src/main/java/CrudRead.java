@@ -74,7 +74,7 @@ public class CrudRead {
         connection.close();
     }
 
-    // Used to reduce amount of code when reading result sets
+    // Used to reduce amount of code when reading result sets, specifically for CrudRead
     public void readResultSet(ResultSet rs) throws SQLException {
         while (rs.next()) {
             System.out.println("##########");

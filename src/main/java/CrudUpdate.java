@@ -48,6 +48,7 @@ public class CrudUpdate {
         }
     }
 
+    // Used to reduce amount of code when reading result sets, specifically for CrudUpdate
     public void ReadResults(ResultSet rs, String userInput, Scanner sc, Statement statement) throws SQLException {
         while (rs.next()) {
             System.out.println("##########");
