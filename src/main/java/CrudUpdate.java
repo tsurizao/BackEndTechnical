@@ -59,7 +59,7 @@ public class CrudUpdate {
             System.out.println("Date Joined: " + rs.getDate("date_joined"));
             System.out.println("Date of Information Update: " + rs.getDate("date_updated"));
             System.out.println("##########");
-            System.out.println("Is this the person you're updating?: y/n");
+            System.out.println("Is this the person you're UPDATING?: y/n");
             userInput = sc.nextLine();
             if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
                 Person person = new Person(rs.getLong("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getLong("age"), rs.getString("date_joined"), rs.getString("date_updated"));
