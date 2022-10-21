@@ -49,10 +49,15 @@ public class CrudDelete {
             System.out.println("##########");
             System.out.println("Is this the person you're DELETING?: y/n");
             String userInput = sc.nextLine();
-            if(userInput.equalsIgnoreCase("y")){
-                System.out.println("This process is PERMANENT, enter the word 'DELETE' to confirm.");
+            if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
+                System.out.println("This process is PERMANENT, enter the word 'DELETE' to confirm then press ENTER.  To cancel press ENTER.");
                 userInput = sc.nextLine();
-                if(userInput.equals("DELETE")){
+                if (userInput.equals("DELETE")) {
+                    statement.execute("DELETE FROM persons WHERE id = '" + rs.getLong("id") + "'");
+                    System.out.println("Person has been removed from database.");
+                    break;
+                } else {
+                    System.out.println("Deletion canceled.");
                 }
             }
         }
