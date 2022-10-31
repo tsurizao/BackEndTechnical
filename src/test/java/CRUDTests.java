@@ -17,6 +17,9 @@ public class CRUDTests {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM persons WHERE id = '" + 1 + "'");
         rs.next();
-        assertEquals (rs.getString("first_name"), "John");
+        assertEquals(rs.getString("first_name"), "John");
+        assertEquals(rs.getString("last_name"), "Smith");
+        assertEquals(rs.getLong("age"), 35);
+        assertEquals(rs.getString("date_joined"), "2012-07-22");
     }
 }
